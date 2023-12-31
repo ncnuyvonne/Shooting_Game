@@ -1,0 +1,729 @@
+Analysis & Synthesis report for Shift_R_Reg_8bit
+Sun Dec 31 14:24:17 2023
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "skill:F6"
+ 13. Port Connectivity Checks: "bmodule:F5|skill:F6"
+ 14. Port Connectivity Checks: "amodule:F4|skill:F6"
+ 15. Port Connectivity Checks: "divfreq4:F3"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Dec 31 14:24:17 2023      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Shift_R_Reg_8bit                           ;
+; Top-level Entity Name              ; Shift_R_Reg_8bit                           ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 598                                        ;
+;     Total combinational functions  ; 580                                        ;
+;     Dedicated logic registers      ; 216                                        ;
+; Total registers                    ; 216                                        ;
+; Total pins                         ; 62                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C10E144C8       ;                    ;
+; Top-level entity name                                                      ; Shift_R_Reg_8bit   ; Shift_R_Reg_8bit   ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+; Shift_R_Reg_8bit.v               ; yes             ; User Verilog HDL File  ; D:/quartus_hw/final_project/Shift_R_Reg_8bit/Shift_R_Reg_8bit.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 598         ;
+;                                             ;             ;
+; Total combinational functions               ; 580         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 323         ;
+;     -- 3 input functions                    ; 120         ;
+;     -- <=2 input functions                  ; 137         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 484         ;
+;     -- arithmetic mode                      ; 96          ;
+;                                             ;             ;
+; Total registers                             ; 216         ;
+;     -- Dedicated logic registers            ; 216         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 62          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; Clear~input ;
+; Maximum fan-out                             ; 152         ;
+; Total fan-out                               ; 2774        ;
+; Average fan-out                             ; 3.01        ;
++---------------------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; |Shift_R_Reg_8bit          ; 580 (270)         ; 216 (50)     ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |Shift_R_Reg_8bit             ; work         ;
+;    |amodule:F4|            ; 26 (26)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|amodule:F4  ; work         ;
+;    |bmodule:F5|            ; 24 (24)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|bmodule:F5  ; work         ;
+;    |divfreq2:F1|           ; 35 (35)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|divfreq2:F1 ; work         ;
+;    |divfreq3:F2|           ; 35 (35)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|divfreq3:F2 ; work         ;
+;    |divfreq7:F7|           ; 35 (35)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|divfreq7:F7 ; work         ;
+;    |divfreq:F0|            ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|divfreq:F0  ; work         ;
+;    |skill:F6|              ; 154 (154)         ; 63 (63)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Shift_R_Reg_8bit|skill:F6    ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++----------------------------------------+--------------------------------------------+
+; Register name                          ; Reason for Removal                         ;
++----------------------------------------+--------------------------------------------+
+; skill:F6|bl_attack_type_down[0]        ; Merged with skill:F6|b_attack_type_down[0] ;
+; skill:F6|br_attack_type_down[0]        ; Merged with skill:F6|b_attack_type_down[0] ;
+; skill:F6|bl_attack_type_down[1]        ; Merged with skill:F6|b_attack_type_down[1] ;
+; skill:F6|br_attack_type_down[1]        ; Merged with skill:F6|b_attack_type_down[1] ;
+; skill:F6|bl_attack_type_down[2]        ; Merged with skill:F6|b_attack_type_down[2] ;
+; skill:F6|br_attack_type_down[2]        ; Merged with skill:F6|b_attack_type_down[2] ;
+; skill:F6|bl_attack_type_down[3]        ; Merged with skill:F6|b_attack_type_down[3] ;
+; skill:F6|br_attack_type_down[3]        ; Merged with skill:F6|b_attack_type_down[3] ;
+; skill:F6|bl_attack_type_down[4]        ; Merged with skill:F6|b_attack_type_down[4] ;
+; skill:F6|br_attack_type_down[4]        ; Merged with skill:F6|b_attack_type_down[4] ;
+; skill:F6|bl_attack_type_down[5]        ; Merged with skill:F6|b_attack_type_down[5] ;
+; skill:F6|br_attack_type_down[5]        ; Merged with skill:F6|b_attack_type_down[5] ;
+; skill:F6|bl_attack_type_down[6]        ; Merged with skill:F6|b_attack_type_down[6] ;
+; skill:F6|br_attack_type_down[6]        ; Merged with skill:F6|b_attack_type_down[6] ;
+; skill:F6|bl_attack_type_down[7]        ; Merged with skill:F6|b_attack_type_down[7] ;
+; skill:F6|br_attack_type_down[7]        ; Merged with skill:F6|b_attack_type_down[7] ;
+; skill:F6|bl_attack_type_up[0]          ; Merged with skill:F6|b_attack_type_up[0]   ;
+; skill:F6|br_attack_type_up[0]          ; Merged with skill:F6|b_attack_type_up[0]   ;
+; skill:F6|al_attack_type_down[0]        ; Merged with skill:F6|a_attack_type_down[0] ;
+; skill:F6|ar_attack_type_down[0]        ; Merged with skill:F6|a_attack_type_down[0] ;
+; skill:F6|al_attack_type_up[0]          ; Merged with skill:F6|a_attack_type_up[0]   ;
+; skill:F6|ar_attack_type_up[0]          ; Merged with skill:F6|a_attack_type_up[0]   ;
+; skill:F6|bl_attack_type_up[1]          ; Merged with skill:F6|b_attack_type_up[1]   ;
+; skill:F6|br_attack_type_up[1]          ; Merged with skill:F6|b_attack_type_up[1]   ;
+; skill:F6|al_attack_type_down[1]        ; Merged with skill:F6|a_attack_type_down[1] ;
+; skill:F6|ar_attack_type_down[1]        ; Merged with skill:F6|a_attack_type_down[1] ;
+; skill:F6|al_attack_type_up[1]          ; Merged with skill:F6|a_attack_type_up[1]   ;
+; skill:F6|ar_attack_type_up[1]          ; Merged with skill:F6|a_attack_type_up[1]   ;
+; skill:F6|bl_attack_type_up[2]          ; Merged with skill:F6|b_attack_type_up[2]   ;
+; skill:F6|br_attack_type_up[2]          ; Merged with skill:F6|b_attack_type_up[2]   ;
+; skill:F6|al_attack_type_down[2]        ; Merged with skill:F6|a_attack_type_down[2] ;
+; skill:F6|ar_attack_type_down[2]        ; Merged with skill:F6|a_attack_type_down[2] ;
+; skill:F6|al_attack_type_up[2]          ; Merged with skill:F6|a_attack_type_up[2]   ;
+; skill:F6|ar_attack_type_up[2]          ; Merged with skill:F6|a_attack_type_up[2]   ;
+; skill:F6|bl_attack_type_up[3]          ; Merged with skill:F6|b_attack_type_up[3]   ;
+; skill:F6|br_attack_type_up[3]          ; Merged with skill:F6|b_attack_type_up[3]   ;
+; skill:F6|al_attack_type_down[3]        ; Merged with skill:F6|a_attack_type_down[3] ;
+; skill:F6|ar_attack_type_down[3]        ; Merged with skill:F6|a_attack_type_down[3] ;
+; skill:F6|al_attack_type_up[3]          ; Merged with skill:F6|a_attack_type_up[3]   ;
+; skill:F6|ar_attack_type_up[3]          ; Merged with skill:F6|a_attack_type_up[3]   ;
+; skill:F6|bl_attack_type_up[4]          ; Merged with skill:F6|b_attack_type_up[4]   ;
+; skill:F6|br_attack_type_up[4]          ; Merged with skill:F6|b_attack_type_up[4]   ;
+; skill:F6|al_attack_type_down[4]        ; Merged with skill:F6|a_attack_type_down[4] ;
+; skill:F6|ar_attack_type_down[4]        ; Merged with skill:F6|a_attack_type_down[4] ;
+; skill:F6|al_attack_type_up[4]          ; Merged with skill:F6|a_attack_type_up[4]   ;
+; skill:F6|ar_attack_type_up[4]          ; Merged with skill:F6|a_attack_type_up[4]   ;
+; skill:F6|bl_attack_type_up[5]          ; Merged with skill:F6|b_attack_type_up[5]   ;
+; skill:F6|br_attack_type_up[5]          ; Merged with skill:F6|b_attack_type_up[5]   ;
+; skill:F6|al_attack_type_down[5]        ; Merged with skill:F6|a_attack_type_down[5] ;
+; skill:F6|ar_attack_type_down[5]        ; Merged with skill:F6|a_attack_type_down[5] ;
+; skill:F6|al_attack_type_up[5]          ; Merged with skill:F6|a_attack_type_up[5]   ;
+; skill:F6|ar_attack_type_up[5]          ; Merged with skill:F6|a_attack_type_up[5]   ;
+; skill:F6|bl_attack_type_up[6]          ; Merged with skill:F6|b_attack_type_up[6]   ;
+; skill:F6|br_attack_type_up[6]          ; Merged with skill:F6|b_attack_type_up[6]   ;
+; skill:F6|al_attack_type_down[6]        ; Merged with skill:F6|a_attack_type_down[6] ;
+; skill:F6|ar_attack_type_down[6]        ; Merged with skill:F6|a_attack_type_down[6] ;
+; skill:F6|al_attack_type_up[6]          ; Merged with skill:F6|a_attack_type_up[6]   ;
+; skill:F6|ar_attack_type_up[6]          ; Merged with skill:F6|a_attack_type_up[6]   ;
+; skill:F6|bl_attack_type_up[7]          ; Merged with skill:F6|b_attack_type_up[7]   ;
+; skill:F6|br_attack_type_up[7]          ; Merged with skill:F6|b_attack_type_up[7]   ;
+; skill:F6|al_attack_type_down[7]        ; Merged with skill:F6|a_attack_type_down[7] ;
+; skill:F6|ar_attack_type_down[7]        ; Merged with skill:F6|a_attack_type_down[7] ;
+; skill:F6|al_attack_type_up[7]          ; Merged with skill:F6|a_attack_type_up[7]   ;
+; skill:F6|ar_attack_type_up[7]          ; Merged with skill:F6|a_attack_type_up[7]   ;
+; divfreq:F0|Count[24]                   ; Merged with divfreq2:F1|Count1[24]         ;
+; divfreq:F0|Count[23]                   ; Merged with divfreq2:F1|Count1[23]         ;
+; divfreq:F0|Count[22]                   ; Merged with divfreq2:F1|Count1[22]         ;
+; divfreq:F0|Count[21]                   ; Merged with divfreq2:F1|Count1[21]         ;
+; divfreq:F0|Count[20]                   ; Merged with divfreq2:F1|Count1[20]         ;
+; divfreq:F0|Count[19]                   ; Merged with divfreq2:F1|Count1[19]         ;
+; divfreq:F0|Count[18]                   ; Merged with divfreq2:F1|Count1[18]         ;
+; divfreq:F0|Count[17]                   ; Merged with divfreq2:F1|Count1[17]         ;
+; divfreq:F0|Count[16]                   ; Merged with divfreq2:F1|Count1[16]         ;
+; divfreq:F0|Count[15]                   ; Merged with divfreq2:F1|Count1[15]         ;
+; divfreq:F0|Count[14]                   ; Merged with divfreq2:F1|Count1[14]         ;
+; divfreq:F0|Count[13]                   ; Merged with divfreq2:F1|Count1[13]         ;
+; divfreq:F0|Count[12]                   ; Merged with divfreq2:F1|Count1[12]         ;
+; divfreq:F0|Count[11]                   ; Merged with divfreq2:F1|Count1[11]         ;
+; divfreq:F0|Count[10]                   ; Merged with divfreq2:F1|Count1[10]         ;
+; divfreq:F0|Count[9]                    ; Merged with divfreq2:F1|Count1[9]          ;
+; divfreq:F0|Count[8]                    ; Merged with divfreq2:F1|Count1[8]          ;
+; divfreq:F0|Count[7]                    ; Merged with divfreq2:F1|Count1[7]          ;
+; divfreq:F0|Count[6]                    ; Merged with divfreq2:F1|Count1[6]          ;
+; divfreq:F0|Count[5]                    ; Merged with divfreq2:F1|Count1[5]          ;
+; divfreq:F0|Count[4]                    ; Merged with divfreq2:F1|Count1[4]          ;
+; divfreq:F0|Count[3]                    ; Merged with divfreq2:F1|Count1[3]          ;
+; divfreq:F0|Count[2]                    ; Merged with divfreq2:F1|Count1[2]          ;
+; divfreq:F0|Count[1]                    ; Merged with divfreq2:F1|Count1[1]          ;
+; divfreq:F0|Count[0]                    ; Merged with divfreq2:F1|Count1[0]          ;
+; skill:F6|b_attack_type_down[0]         ; Stuck at VCC due to stuck port data_in     ;
+; skill:F6|a_attack_type_down[0]         ; Stuck at VCC due to stuck port data_in     ;
+; Total Number of Removed Registers = 91 ;                                            ;
++----------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 216   ;
+; Number of registers using Synchronous Clear  ; 75    ;
+; Number of registers using Synchronous Load   ; 21    ;
+; Number of registers using Asynchronous Clear ; 132   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 73    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; skill:F6|b_attack_type_down[1]          ; 5       ;
+; skill:F6|b_attack_type_down[2]          ; 6       ;
+; skill:F6|b_attack_type_down[3]          ; 5       ;
+; skill:F6|b_attack_type_down[4]          ; 5       ;
+; skill:F6|b_attack_type_down[5]          ; 5       ;
+; skill:F6|b_attack_type_down[6]          ; 5       ;
+; skill:F6|b_attack_type_down[7]          ; 3       ;
+; skill:F6|a_attack_type_down[1]          ; 4       ;
+; skill:F6|a_attack_type_down[2]          ; 5       ;
+; skill:F6|a_attack_type_down[3]          ; 4       ;
+; skill:F6|a_attack_type_down[4]          ; 4       ;
+; skill:F6|a_attack_type_down[5]          ; 4       ;
+; skill:F6|a_attack_type_down[6]          ; 4       ;
+; skill:F6|a_attack_type_down[7]          ; 2       ;
+; R_color[0]~reg0                         ; 3       ;
+; R_color[1]~reg0                         ; 3       ;
+; R_color[2]~reg0                         ; 2       ;
+; R_color[3]~reg0                         ; 3       ;
+; R_color[4]~reg0                         ; 2       ;
+; R_color[5]~reg0                         ; 3       ;
+; R_color[6]~reg0                         ; 3       ;
+; G_color[1]~reg0                         ; 3       ;
+; G_color[2]~reg0                         ; 3       ;
+; G_color[3]~reg0                         ; 3       ;
+; G_color[4]~reg0                         ; 3       ;
+; G_color[5]~reg0                         ; 3       ;
+; G_color[6]~reg0                         ; 3       ;
+; G_color[7]~reg0                         ; 3       ;
+; B_color[0]~reg0                         ; 3       ;
+; B_color[1]~reg0                         ; 3       ;
+; B_color[2]~reg0                         ; 4       ;
+; B_color[3]~reg0                         ; 1       ;
+; B_color[4]~reg0                         ; 1       ;
+; B_color[5]~reg0                         ; 3       ;
+; B_color[6]~reg0                         ; 3       ;
+; B_color[7]~reg0                         ; 3       ;
+; column[2]~reg0                          ; 2       ;
+; column[3]~reg0                          ; 2       ;
+; a_life[0]~reg0                          ; 2       ;
+; a_life[1]~reg0                          ; 2       ;
+; a_life[2]~reg0                          ; 2       ;
+; a_life[3]~reg0                          ; 2       ;
+; b_life[0]~reg0                          ; 2       ;
+; b_life[1]~reg0                          ; 2       ;
+; b_life[2]~reg0                          ; 2       ;
+; b_life[3]~reg0                          ; 2       ;
+; seg[1]~reg0                             ; 1       ;
+; seg[2]~reg0                             ; 1       ;
+; seg[3]~reg0                             ; 1       ;
+; seg[4]~reg0                             ; 1       ;
+; seg[5]~reg0                             ; 1       ;
+; seg[6]~reg0                             ; 1       ;
+; COM[0]~reg0                             ; 9       ;
+; amodule:F4|A_type[0]                    ; 9       ;
+; skill:F6|a_attack_times[3]              ; 10      ;
+; skill:F6|a_attack_times[0]              ; 12      ;
+; skill:F6|b_attack_times[3]              ; 10      ;
+; skill:F6|b_attack_times[0]              ; 12      ;
+; bmodule:F5|B_type[1]                    ; 10      ;
+; amodule:F4|A_type[1]                    ; 9       ;
+; bmodule:F5|B_type[2]                    ; 9       ;
+; amodule:F4|A_type[2]                    ; 10      ;
+; bmodule:F5|B_type[3]                    ; 10      ;
+; amodule:F4|A_type[3]                    ; 10      ;
+; bmodule:F5|B_type[4]                    ; 9       ;
+; amodule:F4|A_type[4]                    ; 10      ;
+; bmodule:F5|B_type[5]                    ; 9       ;
+; amodule:F4|A_type[5]                    ; 10      ;
+; bmodule:F5|B_type[6]                    ; 9       ;
+; amodule:F4|A_type[6]                    ; 10      ;
+; bmodule:F5|B_type[7]                    ; 7       ;
+; skill:F6|a_attack_type_up[0]            ; 2       ;
+; skill:F6|b_attack_type_up[0]            ; 2       ;
+; skill:F6|a_attack_type_up[1]            ; 4       ;
+; skill:F6|b_attack_type_up[1]            ; 4       ;
+; skill:F6|b_attack_type_up[2]            ; 5       ;
+; skill:F6|a_attack_type_up[2]            ; 5       ;
+; skill:F6|a_attack_type_up[3]            ; 4       ;
+; skill:F6|b_attack_type_up[3]            ; 4       ;
+; skill:F6|a_attack_type_up[4]            ; 4       ;
+; skill:F6|b_attack_type_up[4]            ; 4       ;
+; skill:F6|a_attack_type_up[5]            ; 4       ;
+; skill:F6|b_attack_type_up[5]            ; 4       ;
+; skill:F6|a_attack_type_up[6]            ; 4       ;
+; skill:F6|b_attack_type_up[6]            ; 4       ;
+; skill:F6|a_attack_type_up[7]            ; 6       ;
+; skill:F6|b_attack_type_up[7]            ; 6       ;
+; amodule:F4|columnA[2]                   ; 14      ;
+; bmodule:F5|columnB[2]                   ; 16      ;
+; amodule:F4|columnA[3]                   ; 13      ;
+; bmodule:F5|columnB[3]                   ; 13      ;
+; skill:F6|Alife[0]                       ; 2       ;
+; skill:F6|Alife[1]                       ; 3       ;
+; skill:F6|Alife[2]                       ; 3       ;
+; skill:F6|Alife[3]                       ; 3       ;
+; skill:F6|Blife[0]                       ; 2       ;
+; skill:F6|Blife[1]                       ; 3       ;
+; skill:F6|Blife[2]                       ; 3       ;
+; skill:F6|Blife[3]                       ; 3       ;
+; Total number of inverted registers = 99 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Shift_R_Reg_8bit|skill:F6|ccb[0]                ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |Shift_R_Reg_8bit|count[2]                       ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Shift_R_Reg_8bit|skill:F6|cc[0]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |Shift_R_Reg_8bit|skill:F6|Blife[0]              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |Shift_R_Reg_8bit|skill:F6|Alife[0]              ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |Shift_R_Reg_8bit|bmodule:F5|B_type[1]           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |Shift_R_Reg_8bit|amodule:F4|A_type[4]           ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Shift_R_Reg_8bit|skill:F6|a_attack_type_up[1]   ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Shift_R_Reg_8bit|skill:F6|b_attack_type_down[7] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Shift_R_Reg_8bit|amodule:F4|columnA[2]          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Shift_R_Reg_8bit|bmodule:F5|columnB[2]          ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Shift_R_Reg_8bit|seg[6]~reg0                    ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |Shift_R_Reg_8bit|B_color[7]~reg0                ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 15 LEs               ; 21 LEs                 ; Yes        ; |Shift_R_Reg_8bit|R_color[0]~reg0                ;
+; 18:1               ; 3 bits    ; 36 LEs        ; 21 LEs               ; 15 LEs                 ; Yes        ; |Shift_R_Reg_8bit|G_color[5]~reg0                ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 18 LEs               ; 22 LEs                 ; Yes        ; |Shift_R_Reg_8bit|B_color[5]~reg0                ;
+; 20:1               ; 3 bits    ; 39 LEs        ; 18 LEs               ; 21 LEs                 ; Yes        ; |Shift_R_Reg_8bit|R_color[6]~reg0                ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |Shift_R_Reg_8bit|G_color[7]~reg0                ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |Shift_R_Reg_8bit|B_color[3]~reg0                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |Shift_R_Reg_8bit|G_color                        ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Shift_R_Reg_8bit|G_color                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "skill:F6"                                                                                     ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; a_defense_type ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; b_defense_type ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cc             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ccb            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bmodule:F5|skill:F6"                                                                                                                                           ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                                                                                         ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; A_type              ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "A_type[7..1]" will be connected to GND.  ;
+; columnA             ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "columnA[3..1]" will be connected to GND. ;
+; columnB             ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "columnB[3..1]" will be connected to GND. ;
+; a_attack_type_up    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_type_up[7..1]" have no fanouts             ;
+; a_attack_type_up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_attack_type_down  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_type_down[7..1]" have no fanouts           ;
+; a_attack_type_down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_type_up    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_type_up[7..1]" have no fanouts             ;
+; b_attack_type_up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_type_down  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_type_down[7..1]" have no fanouts           ;
+; b_attack_type_down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; Alife               ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Alife[3..1]" have no fanouts                        ;
+; Alife               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; Blife               ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Blife[3..1]" have no fanouts                        ;
+; Blife               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_attack_column     ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_column[3..1]" have no fanouts              ;
+; a_attack_column     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_column     ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_column[3..1]" have no fanouts              ;
+; b_attack_column     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_defense_type      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; b_defense_type      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; cc                  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ccb                 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; a_attack_times      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; b_attack_times      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; al_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; al_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; bl_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; bl_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ar_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ar_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; br_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; br_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; Beep                ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "amodule:F4|skill:F6"                                                                                                                                           ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                                                                                         ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; B_type              ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "B_type[7..1]" will be connected to GND.  ;
+; columnA             ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "columnA[3..1]" will be connected to GND. ;
+; columnB             ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "columnB[3..1]" will be connected to GND. ;
+; a_attack_type_up    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_type_up[7..1]" have no fanouts             ;
+; a_attack_type_up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_attack_type_down  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_type_down[7..1]" have no fanouts           ;
+; a_attack_type_down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_type_up    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_type_up[7..1]" have no fanouts             ;
+; b_attack_type_up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_type_down  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_type_down[7..1]" have no fanouts           ;
+; b_attack_type_down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; Alife               ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Alife[3..1]" have no fanouts                        ;
+; Alife               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; Blife               ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Blife[3..1]" have no fanouts                        ;
+; Blife               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_attack_column     ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "a_attack_column[3..1]" have no fanouts              ;
+; a_attack_column     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; b_attack_column     ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "b_attack_column[3..1]" have no fanouts              ;
+; b_attack_column     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; a_defense_type      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; b_defense_type      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; cc                  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ccb                 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; a_attack_times      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; b_attack_times      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; al_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; al_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; bl_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; bl_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ar_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; ar_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; br_attack_type_up   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; br_attack_type_down ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; Beep                ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divfreq4:F3"                                                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; CLK_div4 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sun Dec 31 14:24:14 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Shift_R_Reg_8bit -c Shift_R_Reg_8bit
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 9 design units, including 9 entities, in source file shift_r_reg_8bit.v
+    Info (12023): Found entity 1: Shift_R_Reg_8bit
+    Info (12023): Found entity 2: amodule
+    Info (12023): Found entity 3: bmodule
+    Info (12023): Found entity 4: skill
+    Info (12023): Found entity 5: divfreq
+    Info (12023): Found entity 6: divfreq2
+    Info (12023): Found entity 7: divfreq3
+    Info (12023): Found entity 8: divfreq4
+    Info (12023): Found entity 9: divfreq7
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(53): created implicit net for "CLK_div"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(54): created implicit net for "CLK_div2"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(55): created implicit net for "CLK_div3"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(56): created implicit net for "CLK_div4"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(67): created implicit net for "CLK_div5"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "a_attack"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "a_defense"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "b_attack"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "b_defense"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "B_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "a_attack_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "b_attack_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "Alife"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "Blife"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "a_attack_column"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "b_attack_column"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "a_defense_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "b_defense_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "cc"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(729): created implicit net for "ccb"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "a_attack"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "a_defense"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "b_attack"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "b_defense"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "CLK_div"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "A_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "a_attack_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "b_attack_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "Alife"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "Blife"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "a_attack_column"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "b_attack_column"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "a_defense_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "b_defense_type"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "cc"
+Warning (10236): Verilog HDL Implicit Net warning at Shift_R_Reg_8bit.v(782): created implicit net for "ccb"
+Info (12127): Elaborating entity "Shift_R_Reg_8bit" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(73): truncated value with size 5 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(360): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(370): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(379): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(388): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(397): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(406): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(415): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(424): truncated value with size 32 to match size of target (4)
+Warning (10240): Verilog HDL Always Construct warning at Shift_R_Reg_8bit.v(96): inferring latch(es) for variable "dot", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dot" at Shift_R_Reg_8bit.v(96)
+Info (12128): Elaborating entity "divfreq" for hierarchy "divfreq:F0"
+Info (12128): Elaborating entity "divfreq2" for hierarchy "divfreq2:F1"
+Info (12128): Elaborating entity "divfreq3" for hierarchy "divfreq3:F2"
+Info (12128): Elaborating entity "divfreq4" for hierarchy "divfreq4:F3"
+Info (12128): Elaborating entity "amodule" for hierarchy "amodule:F4"
+Info (12128): Elaborating entity "skill" for hierarchy "amodule:F4|skill:F6"
+Warning (10855): Verilog HDL warning at Shift_R_Reg_8bit.v(867): initial value for variable a_attack_column should be constant
+Warning (10855): Verilog HDL warning at Shift_R_Reg_8bit.v(867): initial value for variable b_attack_column should be constant
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(928): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(930): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(933): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(934): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(935): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(936): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(939): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(946): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(968): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(983): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(993): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(994): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(996): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(997): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(998): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(999): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(1001): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(1005): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(1011): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(1033): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Shift_R_Reg_8bit.v(1046): truncated value with size 32 to match size of target (4)
+Warning (10034): Output port "a_defense_type" at Shift_R_Reg_8bit.v(848) has no driver
+Warning (10034): Output port "b_defense_type" at Shift_R_Reg_8bit.v(849) has no driver
+Info (12128): Elaborating entity "bmodule" for hierarchy "bmodule:F5"
+Info (12128): Elaborating entity "divfreq7" for hierarchy "divfreq7:F7"
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "skill:F6|a_attack_column[0]" is converted into an equivalent circuit using register "skill:F6|a_attack_column[0]~_emulated" and latch "skill:F6|a_attack_column[0]~1"
+    Warning (13310): Register "skill:F6|b_attack_column[0]" is converted into an equivalent circuit using register "skill:F6|b_attack_column[0]~_emulated" and latch "skill:F6|b_attack_column[0]~1"
+    Warning (13310): Register "skill:F6|b_attack_column[1]" is converted into an equivalent circuit using register "skill:F6|b_attack_column[1]~_emulated" and latch "skill:F6|b_attack_column[1]~5"
+    Warning (13310): Register "skill:F6|a_attack_column[1]" is converted into an equivalent circuit using register "skill:F6|a_attack_column[1]~_emulated" and latch "skill:F6|a_attack_column[1]~5"
+    Warning (13310): Register "skill:F6|a_attack_column[2]" is converted into an equivalent circuit using register "skill:F6|a_attack_column[2]~_emulated" and latch "skill:F6|a_attack_column[2]~9"
+    Warning (13310): Register "skill:F6|b_attack_column[2]" is converted into an equivalent circuit using register "skill:F6|b_attack_column[2]~_emulated" and latch "skill:F6|b_attack_column[2]~9"
+    Warning (13310): Register "skill:F6|a_attack_column[3]" is converted into an equivalent circuit using register "skill:F6|a_attack_column[3]~_emulated" and latch "skill:F6|a_attack_column[3]~13"
+    Warning (13310): Register "skill:F6|b_attack_column[3]" is converted into an equivalent circuit using register "skill:F6|b_attack_column[3]~_emulated" and latch "skill:F6|b_attack_column[3]~13"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dot" is stuck at GND
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register bmodule:F5|B_type[0] will power up to Low
+    Critical Warning (18010): Register bmodule:F5|B_type[7] will power up to High
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "skill:F6|a_attack_type_down[1]~7"
+Info (144001): Generated suppressed messages file D:/quartus_hw/final_project/Shift_R_Reg_8bit/output_files/Shift_R_Reg_8bit.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 662 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 600 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 87 warnings
+    Info: Peak virtual memory: 4628 megabytes
+    Info: Processing ended: Sun Dec 31 14:24:17 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/quartus_hw/final_project/Shift_R_Reg_8bit/output_files/Shift_R_Reg_8bit.map.smsg.
+
+

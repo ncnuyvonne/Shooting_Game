@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at Shift_R_Reg_8bit.v(96): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at Shift_R_Reg_8bit.v(13): object "beep" differs only in case from object "Beep" in the same scope
+Warning (10268): Verilog HDL information at Shift_R_Reg_8bit.v(890): always construct contains both blocking and non-blocking assignments
